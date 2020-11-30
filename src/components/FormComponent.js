@@ -3,7 +3,9 @@ import "../App.css";
 import { Formik } from "formik";
 import FetchFunction from "./FetchFunction";
 import BikeContext from "./BikeContext";
+import TotalContext from "./ToTalContext";
 import "../App.css";
+import TotalFound from "./TotalFound";
 
 function SearchBike() {
   const useStateWithLocalStorage = () => {
@@ -23,7 +25,7 @@ function SearchBike() {
             initialValues={{ name: "", email: "", country: "", city: "" }}
             onSubmit={(values, { setSubmitting }) => {
               setTimeout(() => {
-                alert(JSON.stringify(values, null, 2));
+                //alert(JSON.stringify(values, null, 2));
                 //setSubmitting(false);
                 localStorage.setItem("lK", setValue(values));
               }, 1000);
@@ -151,11 +153,14 @@ function SearchBike() {
 
         <div>
           {value.name ? (
-            <p>
-              Hello {value.name}, {value.length} were found
-            </p>
+            <div>
+              Hello {value.name},
+              <TotalContext.Provider value={value.city}>
+                <TotalFound word={value.city} />
+              </TotalContext.Provider>
+            </div>
           ) : (
-            <p>Kindly fill the form</p>
+            <p>Kindly fill the form, please capitalize your desired City eg "London", to get result</p>
           )}
         </div>
 

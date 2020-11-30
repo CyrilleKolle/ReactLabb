@@ -4,12 +4,10 @@ import BikeContext from "../components/BikeContext";
 
 function FetchComponent() {
   const [bikes, setBikes] = useState([]);
-  //const [searched, setSearched] = useState([])
   function handleClick() {
     fetch("http://api.citybik.es/v2/networks")
       .then((response) => response.json())
       .then((result) => {
-        //console.log(result);
         setBikes(result.networks);
       });
   }
