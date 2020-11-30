@@ -160,7 +160,10 @@ function SearchBike() {
               </TotalContext.Provider>
             </div>
           ) : (
-            <p>Kindly fill the form, please capitalize your desired City eg "London", to get result</p>
+            <p>
+              Kindly fill the form, please capitalize your desired City eg
+              "London", to get result
+            </p>
           )}
         </div>
 

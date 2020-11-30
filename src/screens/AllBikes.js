@@ -28,14 +28,13 @@ function AllStrains() {
       <div>
         <div className="box">
           <div className="boxTitle" onClick={handleToggle}>
-           Click for about Api
+            Click for about Api
           </div>
           {isOpened && (
             <div>
               <div className="boxContent">
                 <HintComponent initialValue={"Was this info Useful"} />
               </div>
-             
             </div>
           )}
         </div>

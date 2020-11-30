@@ -11,7 +11,6 @@ function FetchComponent() {
         setBikes(result.networks);
       });
   }
-  
 
   useEffect(() => {
     handleClick();
@@ -25,7 +24,6 @@ function FetchComponent() {
         <ol className="tilesWrap">
           {bikes.map((bike) =>
             bike.location.city === word ? (
-             
               <li key={bike.id}>
                 {bike.name}
                 <br />
